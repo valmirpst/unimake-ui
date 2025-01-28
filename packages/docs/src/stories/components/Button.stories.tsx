@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button, ButtonProps } from "@unimake-ui/react/src/components/button";
+import { Button, ButtonProps } from "@unimake-ui/react";
 import { MoveRight } from "lucide-react";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-	title: "Example/Button",
+	title: "Form/Button",
 	component: Button,
 	parameters: {
 		Button
@@ -12,7 +11,22 @@ const meta = {
 
 	args: {
 		variant: "primary",
-		children: "Enviar"
+		children: "Enviar",
+		size: "md"
+	},
+
+	argTypes: {
+		variant: {
+			options: ["primary", "secondary", "tertiary", "danger", "safe", "ghost", "link"],
+			control: { type: "inline-radio" }
+		},
+
+		size: {
+			options: ["sm", "md", "full"],
+			control: { type: "inline-radio" }
+		},
+
+		disabled: { control: "boolean" }
 	},
 
 	tags: ["autodocs"]
