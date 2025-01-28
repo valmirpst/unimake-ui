@@ -1,0 +1,39 @@
+{
+	"name": "@unimake-ui/docs",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"dev": "storybook dev -p 6006",
+		"build": "storybook build",
+		"lint": "eslint --fix"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"description": "",
+	"devDependencies": {
+		"@chromatic-com/storybook": "^3.2.4",
+		"@storybook/addon-essentials": "^8.5.2",
+		"@storybook/addon-interactions": "^8.5.2",
+		"@storybook/addon-onboarding": "^8.5.2",
+		"@storybook/blocks": "^8.5.2",
+		"@storybook/react": "^8.5.2",
+		"@storybook/react-vite": "^8.5.2",
+		"@storybook/test": "^8.5.2",
+		"@types/react": "^19.0.8",
+		"@types/react-dom": "^19.0.3",
+		"@unimake-ui/eslint-config": "*",
+		"@unimake-ui/tokens": "*",
+		"@unimake-ui/ts-config": "*",
+		"react": "^19.0.0",
+		"storybook": "^8.5.2",
+		"tsup": "^8.3.6",
+		"typescript": "^5.7.3"
+	},
+	"dependencies": {
+		"lucide-react": "^0.474.0"
+	}
+}

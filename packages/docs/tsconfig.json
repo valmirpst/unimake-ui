@@ -1,0 +1,4 @@
+{
+  "extends": "@unimake-ui/ts-config/react.json",
+  "include": ["src"]
+}
