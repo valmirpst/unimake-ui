@@ -1,0 +1,42 @@
+name: Build and Publish Storybook to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          # cache: 'npm'
+          # cache-dependency-path: '**/package-lock.json'
+
+      # - run: npm i
+      # - run: npm run build
+      # env:
+      # TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      # TURBO_TEAM: valmirpaivastachin
+      - name: Deploy storybook
+        uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        with:
+          install_command: npm ci
+          build_command: npm build
+          path: ./packages/docs/storybook-static
+          checkout: false # default: true
+        # run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        # env:
+        #   GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
