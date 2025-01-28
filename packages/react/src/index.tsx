@@ -9,4 +9,3 @@ export * from "./components/button";
 // export * from "./components/TextInput";
 
 export * from "./styles";
-export * from "./utils/cn";
