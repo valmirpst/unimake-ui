@@ -6,7 +6,7 @@ const baseStyles = css`
 	font-family: ${props => props.theme.fonts.default};
 	line-height: ${props => props.theme.lineHeights.base};
 	margin: 0;
-	color: ${props => props.theme.colors.gray900};
+	color: ${props => props.theme.colors.gray800};
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;

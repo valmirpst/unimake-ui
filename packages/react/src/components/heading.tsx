@@ -38,7 +38,7 @@ const sizeStyles = {
 	`
 };
 
-export interface HeadingProps extends React.HTMLAttributes<HTMLParagraphElement> {
+export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 	as?: React.ElementType;
 	$size?: keyof typeof sizeStyles;
 }

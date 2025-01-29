@@ -9,12 +9,12 @@ import {
 	space,
 	transitions
 } from "@unimake-ui/tokens";
-import { ThemeProvider as ThemeProviderPrimitive } from "styled-components";
 
-export const { theme, darkTheme, ThemeProvider } = {
-	ThemeProvider: ThemeProviderPrimitive,
+export { styled, ThemeProvider, useTheme } from "styled-components";
 
+export const { theme, darkTheme } = {
 	theme: {
+		title: "light",
 		colors,
 		fontSizes,
 		fontWeights,
@@ -26,6 +26,7 @@ export const { theme, darkTheme, ThemeProvider } = {
 	},
 
 	darkTheme: {
+		title: "dark",
 		colors: darkColors,
 		fontSizes,
 		fontWeights,

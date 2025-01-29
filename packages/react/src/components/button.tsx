@@ -1,6 +1,8 @@
 "use client";
 
+import { Slot } from "@radix-ui/react-slot";
 import { opacify } from "polished";
+import { forwardRef } from "react";
 import styled, { css } from "styled-components";
 
 const baseStyles = css`
@@ -11,7 +13,7 @@ const baseStyles = css`
 	font-family: ${props => props.theme.fonts.default};
 	text-align: center;
 	min-width: 120px;
-	padding: 0 ${props => props.theme.space[4]};
+	padding: 0.25rem ${props => props.theme.space[6]};
 	box-sizing: border-box;
 
 	display: flex;
@@ -154,14 +156,22 @@ const sizeStyles = {
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	$variant?: "primary" | "secondary" | "tertiary" | "danger" | "safe" | "ghost" | "link";
 	$size?: "sm" | "md" | "full";
+	asChild?: boolean;
 }
 
-export const Button = styled.button<ButtonProps>`
+const StyledButton = styled.button<ButtonProps>`
 	${baseStyles}
 	${({ $variant = "primary", $size = "md" }) => css`
 		${variantStyles[$variant]}
 		${sizeStyles[$size]}
 	`}
 `;
+
+export const Button: React.FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(
+	({ asChild, ...props }, ref) => {
+		const Component = asChild ? Slot : StyledButton;
+		return <Component ref={ref} {...props} />;
+	}
+);
 
 Button.displayName = "Button";

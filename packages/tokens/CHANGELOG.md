@@ -1,5 +1,11 @@
 # @unimake-ui/tokens
 
+## 1.0.3
+
+### Patch Changes
+
+- Add components: Avatar, Checkbox, MultiStep, TextInput, Box and TextArea; Lighten gray colors with +5 rgb points and fix color issues between dark and light theme
+
 ## 1.0.2
 
 ### Patch Changes

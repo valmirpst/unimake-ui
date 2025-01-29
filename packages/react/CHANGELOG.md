@@ -1,5 +1,11 @@
 # @unimake-ui/react
 
+## 1.2.0
+
+### Minor Changes
+
+- Add components: Avatar, Checkbox, MultiStep, TextInput, Box and TextArea; Lighten gray colors with +5 rgb points and fix color issues between dark and light theme
+
 ## 1.1.1
 
 ### Patch Changes
