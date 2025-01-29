@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react";
-import { theme, ThemeProvider } from "@unimake-ui/react";
+import { darkTheme, theme, ThemeProvider } from "@unimake-ui/react";
 import { Moon, Sun } from "lucide-react";
 import React, { useState } from "react";
 
@@ -9,7 +9,7 @@ const preview: Preview = {
 			const [activeTheme, setActiveTheme] = useState("light");
 
 			return (
-				<ThemeProvider theme={activeTheme === "light" ? theme : { ...theme, colors: theme.darkColors }}>
+				<ThemeProvider theme={activeTheme === "light" ? theme : darkTheme}>
 					<button
 						style={{
 							borderRadius: 4,

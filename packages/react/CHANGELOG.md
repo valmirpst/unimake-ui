@@ -1,5 +1,17 @@
 # @unimake-ui/react
 
+## 1.1.1
+
+### Patch Changes
+
+- Fix the way themes was being exported. Now you have two variables: theme (for light colors) and darkTheme (for dark colors)
+
+## 1.1.0
+
+### Minor Changes
+
+- Add theme.dark and theme.light for using with the exported ThemeProvider
+
 ## 1.0.4
 
 ### Patch Changes
