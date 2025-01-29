@@ -8,7 +8,8 @@
 		"build": "turbo run build",
 		"changeset": "changeset",
 		"version-packages": "changeset version",
-		"release": "turbo run build --filter=!./packages/docs && changeset publish"
+		"release": "turbo run build --filter=!docs && changeset publish",
+		"clear_node_modules": "find . -name 'node_modules' -type d -exec rm -rf {} +"
 	},
 	"packageManager": "npm@11.0.0",
 	"devDependencies": {

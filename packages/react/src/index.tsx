@@ -1,10 +1,9 @@
 export * from "./components/button";
+export * from "./components/heading";
+export * from "./components/text";
 // export * from "./components/Avatar";
-// export * from "./components/Button";
 // export * from "./components/Checkbox";
-// export * from "./components/Heading";
 // export * from "./components/MultiStep";
-// export * from "./components/Text";
 // export * from "./components/TextArea";
 // export * from "./components/TextInput";
 
