@@ -1,5 +1,11 @@
 # @unimake-ui/tokens
 
+## 1.0.2
+
+### Patch Changes
+
+- Export ThemeProvider and add darkColors to theme object; Uses props.theme inside all components; Add the prefix "$" in all component variables
+
 ## 1.0.1
 
 ### Patch Changes

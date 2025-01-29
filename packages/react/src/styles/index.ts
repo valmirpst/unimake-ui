@@ -1,8 +1,22 @@
-import { colors, fonts, fontSizes, fontWeights, lineHeights, radii, space, transitions } from "@unimake-ui/tokens";
+import {
+	colors,
+	darkColors,
+	fonts,
+	fontSizes,
+	fontWeights,
+	lineHeights,
+	radii,
+	space,
+	transitions
+} from "@unimake-ui/tokens";
+import { ThemeProvider as ThemeProviderPrimitive } from "styled-components";
 
-export const { theme } = {
+export const { theme, ThemeProvider } = {
+	ThemeProvider: ThemeProviderPrimitive,
+
 	theme: {
 		colors,
+		darkColors,
 		fontSizes,
 		fontWeights,
 		fonts,

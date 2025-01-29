@@ -10,18 +10,18 @@ const meta = {
 	},
 
 	args: {
-		variant: "primary",
+		$variant: "primary",
 		children: "Enviar",
-		size: "md"
+		$size: "md"
 	},
 
 	argTypes: {
-		variant: {
+		$variant: {
 			options: ["primary", "secondary", "tertiary", "danger", "safe", "ghost", "link"],
 			control: { type: "inline-radio" }
 		},
 
-		size: {
+		$size: {
 			options: ["sm", "md", "full"],
 			control: { type: "inline-radio" }
 		},
@@ -38,49 +38,49 @@ export const Primary: StoryObj<ButtonProps> = {};
 
 export const Secondary: StoryObj<ButtonProps> = {
 	args: {
-		variant: "secondary",
+		$variant: "secondary",
 		children: "Adicionar"
 	}
 };
 
 export const Tertiary: StoryObj<ButtonProps> = {
 	args: {
-		variant: "tertiary",
+		$variant: "tertiary",
 		children: "Cancelar"
 	}
 };
 
 export const Danger: StoryObj<ButtonProps> = {
 	args: {
-		variant: "danger",
+		$variant: "danger",
 		children: "Confirmar"
 	}
 };
 
 export const Safe: StoryObj<ButtonProps> = {
 	args: {
-		variant: "safe",
+		$variant: "safe",
 		children: "Salvar"
 	}
 };
 
 export const Ghost: StoryObj<ButtonProps> = {
 	args: {
-		variant: "ghost",
+		$variant: "ghost",
 		children: "Ghost"
 	}
 };
 
 export const Link: StoryObj<ButtonProps> = {
 	args: {
-		variant: "link",
+		$variant: "link",
 		children: "Link"
 	}
 };
 
 export const Small: StoryObj<ButtonProps> = {
 	args: {
-		size: "sm"
+		$size: "sm"
 	}
 };
 

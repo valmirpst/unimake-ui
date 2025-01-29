@@ -10,16 +10,16 @@ const meta = {
 
 	args: {
 		children: "Seja bem vindo à Unimake Software UI",
-		size: "md",
-		weight: "regular"
+		$size: "md",
+		$weight: "regular"
 	},
 
 	argTypes: {
-		size: {
+		$size: {
 			options: ["xxs", "xs", "sm", "md", "lg", "xl", "2xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl"],
 			control: { type: "inline-radio" }
 		},
-		weight: {
+		$weight: {
 			options: ["light", "regular", "medium", "bold"],
 			control: "inline-radio"
 		}

@@ -1,13 +1,12 @@
 "use client";
 
 import styled, { css } from "styled-components";
-import { theme } from "../styles";
 
 const baseStyles = css`
-	font-family: ${theme.fonts.default};
-	line-height: ${theme.lineHeights.base};
+	font-family: ${props => props.theme.fonts.default};
+	line-height: ${props => props.theme.lineHeights.base};
 	margin: 0;
-	color: ${theme.colors.gray900};
+	color: ${props => props.theme.colors.gray900};
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;
@@ -16,71 +15,71 @@ const baseStyles = css`
 
 const sizeStyles = {
 	xxs: css`
-		font-size: ${theme.fontSizes.xxs};
+		font-size: ${props => props.theme.fontSizes.xxs};
 	`,
 	xs: css`
-		font-size: ${theme.fontSizes.xs};
+		font-size: ${props => props.theme.fontSizes.xs};
 	`,
 	sm: css`
-		font-size: ${theme.fontSizes.sm};
+		font-size: ${props => props.theme.fontSizes.sm};
 	`,
 	md: css`
-		font-size: ${theme.fontSizes.md};
+		font-size: ${props => props.theme.fontSizes.md};
 	`,
 	lg: css`
-		font-size: ${theme.fontSizes.lg};
+		font-size: ${props => props.theme.fontSizes.lg};
 	`,
 	xl: css`
-		font-size: ${theme.fontSizes.xl};
+		font-size: ${props => props.theme.fontSizes.xl};
 	`,
 	"2xl": css`
-		font-size: ${theme.fontSizes["2xl"]};
+		font-size: ${props => props.theme.fontSizes["2xl"]};
 	`,
 	"4xl": css`
-		font-size: ${theme.fontSizes["4xl"]};
+		font-size: ${props => props.theme.fontSizes["4xl"]};
 	`,
 	"5xl": css`
-		font-size: ${theme.fontSizes["5xl"]};
+		font-size: ${props => props.theme.fontSizes["5xl"]};
 	`,
 	"6xl": css`
-		font-size: ${theme.fontSizes["6xl"]};
+		font-size: ${props => props.theme.fontSizes["6xl"]};
 	`,
 	"7xl": css`
-		font-size: ${theme.fontSizes["7xl"]};
+		font-size: ${props => props.theme.fontSizes["7xl"]};
 	`,
 	"8xl": css`
-		font-size: ${theme.fontSizes["8xl"]};
+		font-size: ${props => props.theme.fontSizes["8xl"]};
 	`,
 	"9xl": css`
-		font-size: ${theme.fontSizes["9xl"]};
+		font-size: ${props => props.theme.fontSizes["9xl"]};
 	`
 };
 
 const weightStyles = {
 	light: css`
-		font-weight: ${theme.fontWeights.light};
+		font-weight: ${props => props.theme.fontWeights.light};
 	`,
 	regular: css`
-		font-weight: ${theme.fontWeights.regular};
+		font-weight: ${props => props.theme.fontWeights.regular};
 	`,
 	medium: css`
-		font-weight: ${theme.fontWeights.medium};
+		font-weight: ${props => props.theme.fontWeights.medium};
 	`,
 	bold: css`
-		font-weight: ${theme.fontWeights.bold};
+		font-weight: ${props => props.theme.fontWeights.bold};
 	`
 };
 
 export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
 	as?: React.ElementType;
-	size?: keyof typeof sizeStyles;
-	weight?: keyof typeof weightStyles;
+	$size?: keyof typeof sizeStyles;
+	$weight?: keyof typeof weightStyles;
 }
 
 export const Text = styled.p<TextProps>`
 	${baseStyles}
-	${({ size = "md" }) => sizeStyles[size]}
-  ${({ weight }) => weight && weightStyles[weight]}
+	${({ $size = "md" }) => sizeStyles[$size]}
+  ${({ $weight }) => $weight && weightStyles[$weight]}
 `;
 
 Text.displayName = "Text";
