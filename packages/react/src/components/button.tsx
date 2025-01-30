@@ -147,6 +147,10 @@ const sizeStyles = {
 		height: 36px;
 	`,
 
+	lg: css`
+		height: 40px;
+	`,
+
 	full: css`
 		width: 100%;
 		height: 36px;
@@ -156,7 +160,7 @@ const sizeStyles = {
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	as?: React.ElementType;
 	$variant?: "primary" | "secondary" | "tertiary" | "danger" | "safe" | "ghost" | "link";
-	$size?: "sm" | "md" | "full";
+	$size?: "sm" | "md" | "lg" | "full";
 	asChild?: boolean;
 	$css?: Interpolation<ButtonProps>;
 }

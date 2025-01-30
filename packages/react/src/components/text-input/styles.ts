@@ -4,12 +4,21 @@ import { lighten, opacify } from "polished";
 import styled, { css } from "styled-components";
 import { TextInputProps } from "../../../dist";
 
-export const TextInputContainer = styled.div<
-	TextInputProps & {
-		hasStartIcon?: boolean;
-		hasEndIcon?: boolean;
-	}
->`
+const sizeStyles = {
+	md: css`
+		padding: ${props => props.theme.space[2]} ${props => props.theme.space[3]};
+		gap: ${props => (!!props.theme.$startIcon || !!props.theme.$endIcon) && props.theme.space[2]};
+		height: 36px;
+	`,
+
+	lg: css`
+		padding: ${props => props.theme.space[2]} ${props => props.theme.space[3]};
+		gap: ${props => (!!props.theme.$startIcon || !!props.theme.$endIcon) && props.theme.space[2]};
+		height: 40px;
+	`
+};
+
+export const TextInputContainer = styled.div<TextInputProps>`
 	background-color: ${props => lighten(0.0125, props.theme.colors.gray100)};
 	border: 1px solid ${props => lighten(0.125, props.theme.colors.gray300)};
 	border-radius: ${props => props.theme.radii.sm};
@@ -18,21 +27,12 @@ export const TextInputContainer = styled.div<
 	display: flex;
 	align-items: center;
 
+	${({ $size = "md" }) => sizeStyles[$size]}
+
 	svg {
 		width: ${props => props.theme.space[4]};
 		height: ${props => props.theme.space[4]};
 	}
-
-	${({ $size = "md", hasStartIcon = false, hasEndIcon = false, theme }) =>
-		$size === "md"
-			? css`
-					padding: ${theme.space[2]} ${theme.space[3]};
-					gap: ${props => (hasStartIcon || hasEndIcon) && props.theme.space[2]};
-			  `
-			: css`
-					padding: ${theme.space[3]} ${theme.space[4]};
-					gap: ${props => (hasStartIcon || hasEndIcon) && props.theme.space[2]};
-			  `}
 
 	${({ $hasError = false }) =>
 		$hasError &&

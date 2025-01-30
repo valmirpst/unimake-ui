@@ -12,7 +12,8 @@ const meta = {
 	args: {
 		$variant: "primary",
 		children: "Enviar",
-		$size: "md"
+		$size: "md",
+		disabled: false
 	},
 
 	argTypes: {
@@ -22,7 +23,7 @@ const meta = {
 		},
 
 		$size: {
-			options: ["sm", "md", "full"],
+			options: ["sm", "md", "lg", "full"],
 			control: { type: "inline-radio" }
 		},
 

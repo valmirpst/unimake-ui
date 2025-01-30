@@ -1,5 +1,11 @@
 # @unimake-ui/react
 
+## 1.2.2
+
+### Patch Changes
+
+- Desestructure and fix TextInput props which was having error and fix sizes of TextInput and Button (md: 36px, lg: 40px)
+
 ## 1.2.1
 
 ### Patch Changes

@@ -18,7 +18,7 @@ export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputEleme
 export const TextInput = forwardRef<ComponentRef<typeof Input>, TextInputProps>(
 	({ $prefix, $startIcon, $endIcon, $hasError, $size, ...props }, ref) => {
 		return (
-			<TextInputContainer hasStartIcon={!!$startIcon} hasEndIcon={!!$endIcon} $hasError={$hasError} $size={$size}>
+			<TextInputContainer $startIcon={$startIcon} $endIcon={$endIcon} $hasError={$hasError} $size={$size}>
 				{$startIcon}
 				{!!$prefix && <Prefix>{$prefix}</Prefix>}
 				<Input ref={ref} {...props} />
