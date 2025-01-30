@@ -1,5 +1,11 @@
 # @unimake-ui/react
 
+## 1.2.3
+
+### Patch Changes
+
+- Add weight prop for Heading and fix MultiStep error with active prop
+
 ## 1.2.2
 
 ### Patch Changes

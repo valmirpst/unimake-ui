@@ -22,7 +22,13 @@ export const Steps = styled.div<{ size: number }>`
 	`}
 `;
 
-export const Step = styled.div<{ active?: boolean }>`
+interface StepProps {
+	active?: boolean;
+}
+
+export const Step = styled.div.withConfig({
+	shouldForwardProp: prop => prop !== "active"
+})<StepProps>`
 	height: ${props => props.theme.space[1]};
 	border-radius: ${props => props.theme.radii.xs};
 	background-color: ${props => lighten(0.175, props.theme.colors.gray300)};

@@ -38,15 +38,29 @@ const sizeStyles = {
 	`
 };
 
+const weightStyles = {
+	regular: css`
+		font-weight: ${props => props.theme.fontWeights.regular};
+	`,
+	medium: css`
+		font-weight: ${props => props.theme.fontWeights.medium};
+	`,
+	bold: css`
+		font-weight: ${props => props.theme.fontWeights.bold};
+	`
+};
+
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 	as?: React.ElementType;
 	$size?: keyof typeof sizeStyles;
 	$css?: Interpolation<HeadingProps>;
+	$weight?: keyof typeof weightStyles;
 }
 
 export const Heading = styled.h2<HeadingProps>`
 	${baseStyles}
 	${({ $size = "md" }) => sizeStyles[$size]}
+	${({ $weight = "medium" }) => weightStyles[$weight]}
 
 	${props => props.$css}
 `;
