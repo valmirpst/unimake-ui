@@ -3,7 +3,7 @@
 import { Slot } from "@radix-ui/react-slot";
 import { opacify } from "polished";
 import { forwardRef } from "react";
-import styled, { css } from "styled-components";
+import styled, { css, Interpolation } from "styled-components";
 
 const baseStyles = css`
 	all: unset;
@@ -154,17 +154,22 @@ const sizeStyles = {
 };
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	as?: React.ElementType;
 	$variant?: "primary" | "secondary" | "tertiary" | "danger" | "safe" | "ghost" | "link";
 	$size?: "sm" | "md" | "full";
 	asChild?: boolean;
+	$css?: Interpolation<ButtonProps>;
 }
 
 const StyledButton = styled.button<ButtonProps>`
 	${baseStyles}
+
 	${({ $variant = "primary", $size = "md" }) => css`
 		${variantStyles[$variant]}
 		${sizeStyles[$size]}
 	`}
+	
+	${props => props.$css}
 `;
 
 export const Button: React.FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(

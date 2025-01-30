@@ -1,7 +1,7 @@
 "use client";
 
 import { lighten, opacify } from "polished";
-import styled, { css } from "styled-components";
+import styled, { css, Interpolation } from "styled-components";
 
 export const TextArea = styled.textarea<TextAreaProps>`
 	background-color: ${props => lighten(0.0125, props.theme.colors.gray100)};
@@ -49,10 +49,13 @@ export const TextArea = styled.textarea<TextAreaProps>`
 		css`
 			border-color: ${props => props.theme.colors.red300};
 		`}
+
+	${props => props.$css}
 `;
 
 export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
 	$hasError?: boolean;
+	$css?: Interpolation<TextAreaProps>;
 }
 
 TextArea.displayName = "TextArea";

@@ -1,5 +1,11 @@
 # @unimake-ui/react
 
+## 1.2.1
+
+### Patch Changes
+
+- Add css property for each component that receives css string provided by "css" instance from styled-components; Add "as" property for button component
+
 ## 1.2.0
 
 ### Minor Changes

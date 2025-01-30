@@ -10,7 +10,7 @@ import {
 	transitions
 } from "@unimake-ui/tokens";
 
-export { styled, ThemeProvider, useTheme } from "styled-components";
+export { css, styled, ThemeProvider, useTheme } from "styled-components";
 
 export const { theme, darkTheme } = {
 	theme: {

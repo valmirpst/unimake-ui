@@ -1,6 +1,6 @@
 "use client";
 
-import styled, { css } from "styled-components";
+import styled, { css, Interpolation } from "styled-components";
 
 const baseStyles = css`
 	font-family: ${props => props.theme.fonts.default};
@@ -74,12 +74,15 @@ export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
 	as?: React.ElementType;
 	$size?: keyof typeof sizeStyles;
 	$weight?: keyof typeof weightStyles;
+	$css?: Interpolation<TextProps>;
 }
 
 export const Text = styled.p<TextProps>`
 	${baseStyles}
 	${({ $size = "md" }) => sizeStyles[$size]}
   ${({ $weight }) => $weight && weightStyles[$weight]}
+
+	${props => props.$css}
 `;
 
 Text.displayName = "Text";

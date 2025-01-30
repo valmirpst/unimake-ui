@@ -1,7 +1,7 @@
 "use client";
 
 import { lighten } from "polished";
-import styled, { css } from "styled-components";
+import styled, { css, Interpolation } from "styled-components";
 
 const baseStyles = css`
 	padding: ${props => props.theme.space[6]};
@@ -17,6 +17,7 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 	$height?: number | string | undefined;
 	$maxWidth?: number | string | undefined;
 	$maxHeight?: number | string | undefined;
+	$css?: Interpolation<BoxProps>;
 }
 
 export const Box = styled.div<BoxProps>`
@@ -28,6 +29,8 @@ export const Box = styled.div<BoxProps>`
 		max-width: ${$maxWidth};
 		max-height: ${$maxHeight};
 	`}
+
+	${props => props.$css}
 `;
 
 Box.displayName = "Box";

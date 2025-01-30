@@ -1,6 +1,7 @@
 "use client";
 
 import { ComponentRef, forwardRef, ReactNode } from "react";
+import { Interpolation } from "styled-components/dist/types";
 import { Input, Prefix, TextInputContainer } from "./styles";
 
 export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -10,6 +11,7 @@ export interface TextInputProps extends React.InputHTMLAttributes<HTMLInputEleme
 	$startIcon?: ReactNode;
 	$endIcon?: ReactNode;
 	$hasError?: boolean;
+	$css?: Interpolation<TextInputProps>;
 	asChild?: boolean;
 }
 

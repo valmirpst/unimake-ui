@@ -62,6 +62,8 @@ export const sizeStyles = {
 export const AvatarContainer = styled(AvatarRadix.Root)<AvatarProps>`
 	${baseAvatarStyles}
 	${({ $size }) => sizeStyles[$size || "md"]}
+
+	${props => props.$css}
 `;
 
 export const AvatarImage = styled(AvatarRadix.Image)`

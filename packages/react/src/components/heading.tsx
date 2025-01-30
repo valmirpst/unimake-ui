@@ -1,6 +1,6 @@
 "use client";
 
-import styled, { css } from "styled-components";
+import styled, { css, Interpolation } from "styled-components";
 
 const baseStyles = css`
 	font-family: ${props => props.theme.fonts.default};
@@ -41,11 +41,14 @@ const sizeStyles = {
 export interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 	as?: React.ElementType;
 	$size?: keyof typeof sizeStyles;
+	$css?: Interpolation<HeadingProps>;
 }
 
 export const Heading = styled.h2<HeadingProps>`
 	${baseStyles}
 	${({ $size = "md" }) => sizeStyles[$size]}
+
+	${props => props.$css}
 `;
 
 Heading.displayName = "Heading";

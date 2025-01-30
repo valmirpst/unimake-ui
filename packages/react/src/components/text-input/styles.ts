@@ -57,7 +57,7 @@ export const Prefix = styled.span`
 	font-weight: ${props => props.theme.fontWeights.regular};
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<{ $css?: string }>`
 	font-family: ${props => props.theme.fonts.default};
 	font-size: ${props => props.theme.fontSizes.sm};
 	color: ${props => props.theme.colors.gray800};
@@ -65,6 +65,8 @@ export const Input = styled.input`
 	background: transparent;
 	border: 0;
 	width: 100%;
+
+	${props => props.$css}
 
 	&:focus {
 		outline: 0;
