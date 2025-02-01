@@ -7,15 +7,15 @@ export interface MultiStepProps {
 	$currentStep?: number;
 }
 
-export function MultiStep({ $size, $currentStep = 1 }: MultiStepProps) {
+export function MultiStep({ $size = 1, $currentStep = 1 }: MultiStepProps) {
 	return (
 		<MultiStepContainer>
 			<Label>
 				Passo {$currentStep} de {$size}
 			</Label>
-			<Steps size={$size}>
-				{Array.from({ length: $size }, (_, i) => i + 1).map(step => {
-					return <Step key={step} active={$currentStep >= step} />;
+			<Steps $size={$size}>
+				{Array.from({ length: $size }, (_, i) => i + 1).map((step, index) => {
+					return <Step key={`${step} + ${index}`} $active={$currentStep >= step} />;
 				})}
 			</Steps>
 		</MultiStepContainer>

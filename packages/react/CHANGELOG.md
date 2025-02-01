@@ -1,5 +1,17 @@
 # @unimake-ui/react
 
+## 1.2.5
+
+### Patch Changes
+
+- Try to fix multi step className conflict for the second time
+
+## 1.2.4
+
+### Patch Changes
+
+- Fix darkColors for better visual; Add text variants (danger, safe, default and lighter); Try to fix multi-step className conflicts
+
 ## 1.2.3
 
 ### Patch Changes

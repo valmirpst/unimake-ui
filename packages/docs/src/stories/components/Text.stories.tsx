@@ -11,7 +11,8 @@ const meta = {
 	args: {
 		children: "Seja bem vindo à Unimake Software UI",
 		$size: "md",
-		$weight: "regular"
+		$weight: "regular",
+		$variant: "default"
 	},
 
 	argTypes: {
@@ -30,4 +31,23 @@ const meta = {
 
 export default meta;
 
-export const Primary: StoryObj<TextProps> = {};
+export const Default: StoryObj<TextProps> = {};
+
+export const Lighter: StoryObj<TextProps> = {
+	args: {
+		$variant: "lighter"
+	}
+};
+
+export const Danger: StoryObj<TextProps> = {
+	args: {
+		children: "Erro ao salvar formulário!",
+		$variant: "danger"
+	}
+};
+
+export const Safe: StoryObj<TextProps> = {
+	args: {
+		$variant: "safe"
+	}
+};

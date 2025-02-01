@@ -69,7 +69,7 @@ const variantStyles = {
 	`,
 
 	tertiary: css`
-		color: ${props => props.theme.colors.gray500};
+		color: ${props => props.theme.colors.gray600};
 
 		&:not(:disabled):hover {
 			color: ${props => props.theme.colors.gray900};

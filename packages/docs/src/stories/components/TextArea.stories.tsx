@@ -46,6 +46,12 @@ export default meta;
 
 export const Primary: StoryObj<TextAreaProps> = {};
 
+export const Placeholder: StoryObj<TextAreaProps> = {
+	args: {
+		placeholder: "Escreva uma descrição para esta atividade..."
+	}
+};
+
 export const WithError: StoryObj<TextAreaProps> = {
 	args: {
 		$hasError: true

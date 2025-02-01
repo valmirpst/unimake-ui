@@ -1,5 +1,11 @@
 # @unimake-ui/tokens
 
+## 1.0.4
+
+### Patch Changes
+
+- Fix darkColors for better visual; Add text variants (danger, safe, default and lighter); Try to fix multi-step className conflicts
+
 ## 1.0.3
 
 ### Patch Changes

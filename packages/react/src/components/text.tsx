@@ -6,7 +6,6 @@ const baseStyles = css`
 	font-family: ${props => props.theme.fonts.default};
 	line-height: ${props => props.theme.lineHeights.base};
 	margin: 0;
-	color: ${props => props.theme.colors.gray800};
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;
@@ -70,17 +69,34 @@ const weightStyles = {
 	`
 };
 
+const variantStyles = {
+	default: css`
+		color: ${props => props.theme.colors.gray800};
+	`,
+	lighter: css`
+		color: ${props => props.theme.colors.gray600};
+	`,
+	danger: css`
+		color: ${props => props.theme.colors.red300};
+	`,
+	safe: css`
+		color: ${({ theme }) => (theme.title === "dark" ? theme.colors.green300 : theme.colors.green500)};
+	`
+};
+
 export interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
 	as?: React.ElementType;
 	$size?: keyof typeof sizeStyles;
 	$weight?: keyof typeof weightStyles;
+	$variant?: keyof typeof variantStyles;
 	$css?: Interpolation<TextProps>;
 }
 
 export const Text = styled.p<TextProps>`
 	${baseStyles}
 	${({ $size = "md" }) => sizeStyles[$size]}
-  ${({ $weight }) => $weight && weightStyles[$weight]}
+  ${({ $weight = "regular" }) => $weight && weightStyles[$weight]}
+  ${({ $variant = "default" }) => $variant && variantStyles[$variant]}
 
 	${props => props.$css}
 `;

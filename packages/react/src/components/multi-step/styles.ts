@@ -11,30 +11,27 @@ export const Label = styled(Text)`
 	font-size: ${props => props.theme.fontSizes.sm};
 `;
 
-export const Steps = styled.div<{ size: number }>`
+export const Steps = styled.div<{ $size: number }>`
 	display: grid;
-	grid-template-columns: repeat(var(--steps-size), 1fr);
 	gap: ${props => props.theme.space[2]};
 	margin-top: ${props => props.theme.space[1]};
 
-	${({ size }) => css`
-		grid-template-columns: repeat(${size}, 1fr);
+	${({ $size }) => css`
+		grid-template-columns: repeat(${$size}, 1fr);
 	`}
 `;
 
 interface StepProps {
-	active?: boolean;
+	$active?: boolean;
 }
 
-export const Step = styled.div.withConfig({
-	shouldForwardProp: prop => prop !== "active"
-})<StepProps>`
+export const Step = styled.div<StepProps>`
 	height: ${props => props.theme.space[1]};
 	border-radius: ${props => props.theme.radii.xs};
 	background-color: ${props => lighten(0.175, props.theme.colors.gray300)};
 
 	${props =>
-		props.active &&
+		props.$active &&
 		css`
 			background-color: ${lighten(0.05, props.theme.colors.unimake300)};
 		`}
