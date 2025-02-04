@@ -1,6 +1,6 @@
 {
-  "name": "@unimake-ui/ts-config",
-  "version": "1.0.1",
-  "license": "ISC",
-  "private": true
+	"name": "@unimake-ui/ts-config",
+	"version": "1.0.2",
+	"license": "MIT",
+	"private": true
 }

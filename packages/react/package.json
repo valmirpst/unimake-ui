@@ -1,6 +1,6 @@
 {
 	"name": "@unimake-ui/react",
-	"version": "1.2.5",
+	"version": "1.2.6",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC",
+	"license": "MIT",
 	"type": "commonjs",
 	"description": "",
 	"devDependencies": {

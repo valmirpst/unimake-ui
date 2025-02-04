@@ -1,5 +1,11 @@
 # @unimake-ui/react
 
+## 1.2.6
+
+### Patch Changes
+
+- Update licenses for all packages, from ISC to MIT
+
 ## 1.2.5
 
 ### Patch Changes

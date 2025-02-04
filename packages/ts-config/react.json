@@ -1,9 +1,9 @@
 {
-  "extends": "./base.json",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "ESNext",
-    "target": "ES2017"
-  }
+	"extends": "./base.json",
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"module": "ESNext",
+		"target": "ES2017"
+	}
 }

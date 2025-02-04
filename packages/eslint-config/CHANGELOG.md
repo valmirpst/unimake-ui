@@ -1,5 +1,11 @@
 # @unimake-ui/eslint-config
 
+## 1.0.2
+
+### Patch Changes
+
+- Update licenses for all packages, from ISC to MIT
+
 ## 1.0.1
 
 ### Patch Changes

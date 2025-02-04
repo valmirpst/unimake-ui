@@ -1,5 +1,11 @@
 # @unimake-ui/tokens
 
+## 1.0.5
+
+### Patch Changes
+
+- Update licenses for all packages, from ISC to MIT
+
 ## 1.0.4
 
 ### Patch Changes
