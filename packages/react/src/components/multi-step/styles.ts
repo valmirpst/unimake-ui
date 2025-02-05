@@ -7,7 +7,7 @@ import { Text } from "../text";
 export const MultiStepContainer = styled.div``;
 
 export const Label = styled(Text)`
-	color: ${props => props.theme.colors.gray600};
+	color: ${props => props.theme.colors.gray700};
 	font-size: ${props => props.theme.fontSizes.sm};
 `;
 

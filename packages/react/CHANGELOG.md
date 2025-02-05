@@ -1,5 +1,11 @@
 # @unimake-ui/react
 
+## 1.2.7
+
+### Patch Changes
+
+- fix colors, themes and exports createGlobalStyle from styled-components
+
 ## 1.2.6
 
 ### Patch Changes

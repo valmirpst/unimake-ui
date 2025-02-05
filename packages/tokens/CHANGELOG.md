@@ -1,5 +1,11 @@
 # @unimake-ui/tokens
 
+## 1.0.6
+
+### Patch Changes
+
+- fix colors, themes and exports createGlobalStyle from styled-components
+
 ## 1.0.5
 
 ### Patch Changes

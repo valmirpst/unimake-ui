@@ -31,7 +31,7 @@ export const TextArea = styled.textarea<TextAreaProps>`
 	}
 
 	&::placeholder {
-		color: ${props => opacify(-0.25, props.theme.colors.gray500)};
+		color: ${props => opacify(-0.125, props.theme.colors.gray500)};
 	}
 
 	&:focus {
