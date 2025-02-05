@@ -1,0 +1,101 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="SSR" />
+
+# Server Side Rendering (SSR)
+
+#### Para evitar problemas ao utilizar SSR, é necessário realizar algumas configurações
+
+<br />
+<br />
+
+## Configuração do registry
+
+#### Primeiro, crie um componente que servirá como Provider por volta da aplicação
+
+<code>
+
+```
+  // styled-jsx-registry.tsx
+
+  'use client';
+
+  import { useServerInsertedHTML } from 'next/navigation';
+  import React, { useEffect, useState } from 'react';
+  import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+
+  export default function StyledJsxRegistry({ children }: { children: React.ReactNode }) {
+    const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet());
+    const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+  setIsClient(true);
+  }, []);
+
+  useServerInsertedHTML(() => {
+  return <>{styledComponentsStyleSheet.getStyleElement()}</>;
+  });
+
+  return isClient
+    ? children
+    : <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
+        {children}
+      </StyleSheetManager>;
+  }
+
+```
+
+</code>
+
+#### Após isso, importe-o no RootLayout da aplicação e envelope tudo que utiliza styled-components, menos o StyledThemeProvider, com ele.
+
+<code>
+
+```
+// layout.tsx
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="pt-br">
+      <ThemeContextProvider>
+        <StyledJsxRegistry>   <---------------
+
+          <Body>
+            {children}
+          </Body>
+
+        </StyledJsxRegistry>   <---------------
+      </ThemeContextProvider>
+    </html>
+  );
+}
+```
+
+</code>
+
+#### Por fim, caso esteja enfrentando problemas de hidratação, desative a opção de StrictMode do react:
+
+<code>
+
+```
+// next.config.ts
+
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  reactStrictMode: false,   <---------------
+};
+
+export default nextConfig;
+
+```
+
+</code>
+
+```
+
+```
