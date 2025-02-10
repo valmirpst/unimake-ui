@@ -1,5 +1,5 @@
+import { Text, TextProps } from "@/components/ui/text";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Text, TextProps } from "@unimake-ui/react";
 
 const meta = {
 	title: "Typography/Text",
@@ -10,17 +10,17 @@ const meta = {
 
 	args: {
 		children: "Seja bem vindo à Unimake Software UI",
-		$size: "md",
-		$weight: "regular",
-		$variant: "default"
+		size: "md",
+		weight: "regular",
+		variant: "default"
 	},
 
 	argTypes: {
-		$size: {
+		size: {
 			options: ["xxs", "xs", "sm", "md", "lg", "xl", "2xl", "4xl", "5xl", "6xl", "7xl", "8xl", "9xl"],
 			control: { type: "inline-radio" }
 		},
-		$weight: {
+		weight: {
 			options: ["light", "regular", "medium", "bold"],
 			control: "inline-radio"
 		}
@@ -35,19 +35,19 @@ export const Default: StoryObj<TextProps> = {};
 
 export const Lighter: StoryObj<TextProps> = {
 	args: {
-		$variant: "lighter"
+		variant: "lighter"
 	}
 };
 
 export const Danger: StoryObj<TextProps> = {
 	args: {
 		children: "Erro ao salvar formulário!",
-		$variant: "danger"
+		variant: "danger"
 	}
 };
 
 export const Safe: StoryObj<TextProps> = {
 	args: {
-		$variant: "safe"
+		variant: "safe"
 	}
 };

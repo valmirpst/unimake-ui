@@ -1,5 +1,11 @@
 # @unimake-ui/tokens
 
+## 1.0.7
+
+### Patch Changes
+
+- Add @unimake-ui/tailwindcss package and mdify some tokens for better adapting with components
+
 ## 1.0.6
 
 ### Patch Changes

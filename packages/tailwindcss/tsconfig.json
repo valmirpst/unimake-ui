@@ -1,0 +1,8 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": { "@/*": ["src/*"] }
+	},
+	"extends": "@unimake-ui/ts-config/react.json",
+	"include": ["src", "../docs/src/stories"]
+}

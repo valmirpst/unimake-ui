@@ -1,5 +1,7 @@
+import { Box } from "@/components/ui/box";
+import { Text } from "@/components/ui/text";
+import { TextInput, TextInputProps } from "@/components/ui/text-input";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Box, Text, TextInput, TextInputProps } from "@unimake-ui/react";
 import { User2 } from "lucide-react";
 
 const meta = {
@@ -10,16 +12,16 @@ const meta = {
 	},
 
 	args: {
-		$size: "md",
+		hSize: "md",
 		disabled: false,
-		$hasError: false,
+		hasError: false,
 		placeholder: "",
-		$prefix: ""
+		prefix: ""
 	},
 
 	argTypes: {
-		$size: {
-			options: ["md", "lg"],
+		hSize: {
+			options: ["sm", "md", "lg"],
 			control: "inline-radio"
 		},
 
@@ -31,11 +33,11 @@ const meta = {
 			type: "string"
 		},
 
-		$hasError: {
+		hasError: {
 			type: "boolean"
 		},
 
-		$prefix: {
+		prefix: {
 			type: "string"
 		}
 	},
@@ -44,7 +46,7 @@ const meta = {
 		Story => {
 			return (
 				<Box as="label" style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
-					<Text $size="sm">Descrição</Text>
+					<Text size="sm">Descrição</Text>
 					{Story()}
 				</Box>
 			);
@@ -60,25 +62,25 @@ export const Primary: StoryObj<TextInputProps> = {};
 
 export const WithPrefix: StoryObj<TextInputProps> = {
 	args: {
-		$prefix: "github.com/"
+		prefix: "github.com/"
 	}
 };
 
 export const WithStartIcon: StoryObj<TextInputProps> = {
 	args: {
-		$startIcon: <User2 />
+		startIcon: <User2 size={16} />
 	}
 };
 
 export const WithEndIcon: StoryObj<TextInputProps> = {
 	args: {
-		$endIcon: <User2 />
+		endIcon: <User2 size={16} />
 	}
 };
 
 export const WithError: StoryObj<TextInputProps> = {
 	args: {
-		$hasError: true
+		hasError: true
 	}
 };
 

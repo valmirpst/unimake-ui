@@ -1,5 +1,5 @@
+import { Heading, HeadingProps } from "@/components/ui/heading";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Heading, HeadingProps } from "@unimake-ui/react";
 
 const meta = {
 	title: "Typography/Heading",
@@ -15,8 +15,11 @@ const meta = {
 
 	argTypes: {
 		size: {
-			options: ["sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl"],
+			options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl", "5xl"],
 			control: { type: "inline-radio" }
+		},
+		as: {
+			control: { disable: true }
 		}
 	},
 

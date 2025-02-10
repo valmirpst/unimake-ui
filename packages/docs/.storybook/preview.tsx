@@ -3,6 +3,8 @@ import { darkTheme, StyledThemeProvider, theme } from "@unimake-ui/react";
 import { Moon, Sun } from "lucide-react";
 import React, { useState } from "react";
 
+import "@/app/globals.css";
+
 const preview: Preview = {
 	decorators: [
 		Story => {
@@ -24,7 +26,7 @@ const preview: Preview = {
 					>
 						{activeTheme === "light" ? <Sun size={16} /> : <Moon size={16} />}
 					</button>
-					{Story()}
+					<div className={activeTheme === "dark" ? "dark" : ""}>{Story()}</div>
 				</StyledThemeProvider>
 			);
 		}

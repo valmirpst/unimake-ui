@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Box, MultiStep, MultiStepProps } from "@unimake-ui/react";
 
 export default {
-	title: "Form/Multi Step",
+	title: "Form/Multi Step (styled-components)",
 	component: MultiStep,
 
 	args: {

@@ -1,5 +1,5 @@
+import { Avatar, AvatarProps } from "@/components/ui/avatar";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Avatar, AvatarProps } from "@unimake-ui/react";
 
 const meta = {
 	title: "Data Display/Avatar",
@@ -9,15 +9,19 @@ const meta = {
 	},
 
 	args: {
-		$size: "md",
-		src: "https:github.com/valmirpst.png",
+		size: "md",
+		src: "https://github.com/valmirpst.png",
 		alt: "Valmir Paiva Stachin"
 	},
 
 	argTypes: {
-		$size: {
-			options: ["sm", "md", "lg"],
+		size: {
+			options: ["xs", "sm", "md", "lg"],
 			control: "inline-radio"
+		},
+
+		src: {
+			control: { type: "text" }
 		}
 	},
 
@@ -30,6 +34,6 @@ export const Primary: StoryObj<AvatarProps> = {};
 
 export const WithFallback: StoryObj<AvatarProps> = {
 	args: {
-		src: undefined
+		src: ""
 	}
 };

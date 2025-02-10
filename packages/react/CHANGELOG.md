@@ -1,5 +1,17 @@
 # @unimake-ui/react
 
+## 1.2.9
+
+### Patch Changes
+
+- Add @unimake-ui/tailwindcss package and mdify some tokens for better adapting with components
+
+## 1.2.8
+
+### Patch Changes
+
+- create bin script for adding components like shadcn/ui
+
 ## 1.2.7
 
 ### Patch Changes

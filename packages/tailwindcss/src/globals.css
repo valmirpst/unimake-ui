@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--black: 0, 0, 0;
+
+	--white-100: #fff;
+	--white-300: #fafafa;
+
+	--gray-50: #f1f1f3;
+	--gray-100: #e6e6eb;
+	--gray-200: #ceced8;
+	--gray-300: #9c9caa;
+	--gray-400: #868692;
+	--gray-500: #747481;
+	--gray-600: #5a5a63;
+	--gray-700: #303036;
+	--gray-800: #26262a;
+	--gray-900: #18181a;
+
+	--unimake-100: #00527a;
+	--unimake-300: #004465;
+	--unimake-500: #003652;
+	--unimake-700: #00293d;
+	--unimake-900: #001b29;
+
+	--green-300: #28a847;
+	--green-500: #1f8438;
+	--green-700: #17632a;
+
+	--red-300: #d52a3e;
+	--red-500: #bf2234;
+	--red-700: #ad1f2f;
+}
+
+.dark {
+	--black: 0, 0, 0;
+
+	--white-100: #fff;
+	--white-300: #fafafa;
+
+	--gray-50: #121214;
+	--gray-100: #1b1b1e;
+	--gray-200: #202024;
+	--gray-300: #29292e;
+	--gray-400: #323238;
+	--gray-500: #7c7c8a;
+	--gray-600: #9494a2;
+	--gray-700: #ababb7;
+	--gray-800: #c9c9d2;
+	--gray-900: #e1e1e6;
+
+	--unimake-100: #005f8f;
+	--unimake-300: #00527a;
+	--unimake-500: #004465;
+	--unimake-700: #003652;
+	--unimake-900: #00293d;
+
+	--green-300: #28a847;
+	--green-500: #1f8438;
+	--green-700: #17632a;
+
+	--red-300: #d02539;
+	--red-500: #bf2234;
+	--red-700: #ad1f2f;
+}
+
+@layer base {
+	:root {
+		@apply font-default antialiased;
+	}
+}

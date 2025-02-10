@@ -9,6 +9,7 @@ import { dirname, join } from "path";
 function getAbsolutePath(value: string): any {
 	return dirname(require.resolve(join(value, "package.json")));
 }
+
 const config: StorybookConfig = {
 	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
 	addons: [
@@ -17,9 +18,21 @@ const config: StorybookConfig = {
 		getAbsolutePath("@chromatic-com/storybook"),
 		getAbsolutePath("@storybook/addon-interactions")
 	],
+
 	framework: {
 		name: getAbsolutePath("@storybook/react-vite"),
 		options: {}
+	},
+
+	viteFinal: async config => {
+		// Adiciona o alias @ apontando para a pasta src
+		if (config.resolve) {
+			config.resolve.alias = {
+				...config.resolve.alias,
+				"@": join(__dirname, "../src")
+			};
+		}
+		return config;
 	}
 };
 export default config;

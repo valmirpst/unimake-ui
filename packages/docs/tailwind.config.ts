@@ -1,8 +1,4 @@
-import { colors, darkColors } from "@unimake-ui/tokens";
-import { getContrast, lighten } from "polished";
-
-const tailwindConfig = `
-		import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss";
 
 export default {
 	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
@@ -11,7 +7,7 @@ export default {
 		colors: {
 			transparent: "transparent",
 
-			black: "var(--black)",
+			black: "rgba(var(--black), <alpha-value>)",
 
 			white: {
 				100: "var(--white-100)",
@@ -119,64 +115,26 @@ export default {
 
 			transitionProperty: {
 				DEFAULT: "all"
+			},
+
+			keyframes: {
+				slideIn: {
+					"0%": { transform: "translateY(-100%)" },
+					"100%": { transform: "translateY(0)" }
+				},
+
+				slideOut: {
+					"0%": { transform: "translateY(0)" },
+					"100%": { transform: "translateY(-100%)" }
+				}
+			},
+
+			animation: {
+				slideIn: "slideIn 0.1s ease-out",
+				slideOut: "slideOut 0.1s ease-out"
 			}
 		}
 	},
 
 	plugins: []
 } satisfies Config;
-
-`;
-
-export function ColorsGrid() {
-	return (
-		<>
-			<span
-				style={{ textDecoration: "underline", cursor: "pointer" }}
-				onClick={() => navigator.clipboard.writeText(tailwindConfig)}
-			>
-				copy tailwind config
-			</span>
-			<div style={{ marginTop: 16, marginBottom: 16 }}>
-				<h2>Light</h2>
-			</div>
-			{Object.entries(colors).map(([key, color]) => {
-				return (
-					<div key={key} style={{ backgroundColor: color, padding: "2rem" }}>
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "space-between",
-								fontFamily: "monospace",
-								color: getContrast(color, "#FFF") < 3.5 ? "#000" : "#FFF"
-							}}
-						>
-							<strong>${key}</strong>
-							<span>{color}</span>
-						</div>
-					</div>
-				);
-			})}
-			<h2 style={{ marginBottom: 16, marginTop: 32 }}>Dark</h2>
-			<div style={{ backgroundColor: lighten(0.0375, darkColors.gray100), padding: 16, margin: -16, borderRadius: 4 }}>
-				{Object.entries(darkColors).map(([key, color]) => {
-					return (
-						<div key={key} style={{ backgroundColor: color, padding: "2rem" }}>
-							<div
-								style={{
-									display: "flex",
-									justifyContent: "space-between",
-									fontFamily: "monospace",
-									color: getContrast(color, "#FFF") < 3.5 ? "#000" : "#FFF"
-								}}
-							>
-								<strong>${key}</strong>
-								<span>{color}</span>
-							</div>
-						</div>
-					);
-				})}
-			</div>
-		</>
-	);
-}

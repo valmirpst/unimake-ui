@@ -1,5 +1,6 @@
+import { Box, BoxProps } from "@/components/ui/box";
+import { Text } from "@/components/ui/text";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Box, BoxProps, Text } from "@unimake-ui/react";
 
 const meta = {
 	title: "Layout/Box",

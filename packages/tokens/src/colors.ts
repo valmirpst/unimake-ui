@@ -4,6 +4,7 @@ export const colors = {
 	white100: "#FFF",
 	white300: "#FAFAFA",
 
+	gray50: "#F1F1F1",
 	gray100: "#E6E6EB",
 	gray200: "#CECED8",
 	gray300: "#9C9CAA",
@@ -35,7 +36,8 @@ export const darkColors = {
 	white100: "#FFF",
 	white300: "#FAFAFA",
 
-	gray100: "#121214",
+	gray50: "#121214",
+	gray100: "#1b1b1e",
 	gray200: "#202024",
 	gray300: "#29292E",
 	gray400: "#323238",
@@ -45,11 +47,11 @@ export const darkColors = {
 	gray800: "#C9C9D2",
 	gray900: "#E1E1E6",
 
-	unimake100: "#00527A",
-	unimake300: "#004465",
-	unimake500: "#003652",
-	unimake700: "#00293d",
-	unimake900: "#001b29",
+	unimake100: "#005f8f",
+	unimake300: "#00527a",
+	unimake500: "#004465",
+	unimake700: "#003652",
+	unimake900: "#00293d",
 
 	green300: "#28A847",
 	green500: "#1F8438",
