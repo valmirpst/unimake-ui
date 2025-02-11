@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
 import React, { ComponentPropsWithoutRef, ElementType, forwardRef } from "react";
 
-type BoxProps<T extends ElementType = "div"> = {
+export type BoxProps<T extends ElementType = "div"> = {
 	as?: T;
 } & ComponentPropsWithoutRef<T>;
 

@@ -18,7 +18,7 @@ const variantStyles = {
 		"text-gray-700 enabled:hover:text-gray-900 bg-transparent enabled:hover:bg-gray-200 disabled:opacity-60 disabled:cursor-default",
 	danger: "text-white-300 bg-red-500 enabled:hover:bg-red-700 disabled:opacity-60 disabled:cursor-default",
 	safe: "text-white-300 bg-green-500 enabled:hover:bg-green-700 disabled:opacity-60 disabled:cursor-default",
-	link: "p-0 h-max min-w-max text-gray-900 enabled:hover:underline disabled:opacity-60 disabled:cursor-default focus-visible:outline-none focus-visible:underline"
+	link: "p-0 h-max min-w-max text-gray-900 enabled:hover:underline disabled:opacity-60 disabled:cursor-default focus-visible:outline-hidden focus-visible:underline"
 };
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

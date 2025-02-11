@@ -20,7 +20,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 	({ hasError = false, hSize = "md", prefix, startIcon, endIcon, className, ...rest }, ref) => {
 		const inputContainerClasses = cn(
 			"w-full px-3 py-2 rounded-sm box-border flex items-center justify-start bg-gray-50 border border-gray-200 dark:border-gray-300 text-gray-800 text-sm",
-			"focus-within:outline-none focus-within:border-unimake-300 dark:focus-within:border-unimake-300 *:focus:bg-red-300",
+			"focus-within:outline-hidden focus-within:border-unimake-300 dark:focus-within:border-unimake-300 focus:*:bg-red-300",
 			"has-[input:disabled]:opacity-70 has-[input:disabled]:cursor-default",
 			hasError && "border-red-300 dark:border-red-300",
 			(!!startIcon || !!endIcon) && !prefix && "gap-2",
@@ -30,7 +30,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 
 		const inputClasses = cn(
 			"font-default text-sm text-gray-800 caret-gray-800 font-regular bg-transparent border-none w-full placeholder:text-gray-500",
-			"leading-full focus:outline-none"
+			"leading-full focus:outline-hidden"
 		);
 
 		const prefixClasses = cn(

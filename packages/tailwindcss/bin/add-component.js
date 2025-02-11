@@ -48,7 +48,7 @@ function installCnFile() {
 	}
 }
 
-function instalGlobalsCssFile() {
+function installGlobalsCssFile() {
 	const cnFilePath = path.resolve(__dirname, "../src/globals.css");
 	const targetPath = path.resolve("./src/app/");
 
@@ -63,18 +63,6 @@ function instalGlobalsCssFile() {
 		console.log("globals.css instalado com sucesso!");
 	} else {
 		console.error("Arquivo globals.css não encontrado!");
-	}
-}
-
-function installTailwindConfigFile() {
-	const cnFilePath = path.resolve(__dirname, "../tailwind.config.ts");
-	const targetPath = path.resolve("./");
-
-	if (fs.existsSync(cnFilePath)) {
-		execSync(`cp ${cnFilePath} ${targetPath}`, { stdio: "inherit" });
-		console.log("tailwind.config.ts instalado com sucesso!");
-	} else {
-		console.error("Arquivo tailwind.config.ts não encontrado!");
 	}
 }
 
@@ -115,11 +103,16 @@ if (args.length === 0) {
 	// Se não passar nada, instala todos os componentes
 	installAllComponents();
 	installCnFile();
-	instalGlobalsCssFile();
-	installTailwindConfigFile();
+	installGlobalsCssFile();
 	installPostCssConfig();
 } else {
 	// Se passar um componente, instala apenas ele
 	const component = args[0];
-	installComponent(component);
+	if (component.includes("config")) {
+		installCnFile();
+		installPostCssConfig();
+		installGlobalsCssFile();
+	} else {
+		installComponent(component);
+	}
 }

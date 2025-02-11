@@ -1,5 +1,11 @@
 # @unimake-ui/tailwindcss
 
+## 0.3.0
+
+### Minor Changes
+
+- Update to tailwindcss v4; Change colors space to oklch();
+
 ## 0.2.1
 
 ### Patch Changes

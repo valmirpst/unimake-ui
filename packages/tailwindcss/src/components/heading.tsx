@@ -19,13 +19,13 @@ const weightStyles = {
 	bold: "font-bold"
 };
 
-type HeadingProps<T extends ElementType = "h2"> = {
+export type HeadingProps<T extends ElementType = "h2"> = {
 	as?: T;
 	size?: keyof typeof sizeStyles;
 	weight?: keyof typeof weightStyles;
 } & ComponentPropsWithoutRef<T>;
 
-export const HeadingComponent = <T extends ElementType = "h2">(
+const HeadingComponent = <T extends ElementType = "h2">(
 	{ as, size = "md", weight = "medium", children, className, ...rest }: HeadingProps<T>,
 	ref: React.Ref<Element>
 ) => {
