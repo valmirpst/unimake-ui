@@ -7,7 +7,7 @@ export default {
 		colors: {
 			transparent: "transparent",
 
-			black: "var(--black) / <alpha-value>",
+			black: "rgba(var(--black), <alpha-value>)",
 
 			white: {
 				100: "var(--white-100)",

@@ -42,7 +42,7 @@ export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 			<div className={inputContainerClasses}>
 				{startIcon}
 				{!!prefix && <span className={prefixClasses}>{prefix}</span>}
-				<input className={inputClasses} ref={ref} {...rest} />
+				<input spellCheck={false} className={inputClasses} ref={ref} {...rest} />
 				{endIcon}
 			</div>
 		);

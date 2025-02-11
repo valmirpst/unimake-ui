@@ -28,7 +28,7 @@ export const Avatar = forwardRef<ComponentRef<typeof AvatarPrimitive.Root>, Avat
 
 		return (
 			<>
-				<AvatarPrimitive.Root className={classes}>
+				<AvatarPrimitive.Root ref={ref} className={classes}>
 					<AvatarPrimitive.Image className={cn("w-full h-full object-cover", imageClassname)} {...rest} />
 
 					<AvatarPrimitive.Fallback

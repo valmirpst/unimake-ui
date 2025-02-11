@@ -71,3 +71,12 @@
 		@apply font-default antialiased;
 	}
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-background-clip: border-box;
+	-webkit-text-fill-color: var(--gray-800) !important;
+	transition: background-color 5000s ease-in-out 0s;
+}

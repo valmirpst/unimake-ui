@@ -33,7 +33,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 		const Component = asChild ? Slot : "button";
 
 		const classes = cn(
-			"rounded-md font-medium flex items-center justify-center gap-2 px-6 py-2 cursor-pointer transition relative",
+			"text-sm rounded-sm font-medium flex items-center justify-center gap-2 px-6 py-2 cursor-pointer transition relative",
 			sizeStyles[size],
 			variantStyles[variant],
 			className
@@ -46,7 +46,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 						<Loader2 className="w-4 h-4 animate-spin" />
 					</span>
 				)}
-				<span className={`${loading ? "opacity-25" : ""} flex items-center justify-center gap-2`}>{children}</span>
+				<span
+					className={`${
+						loading ? "opacity-0 h-max leading-full" : "h-max leading-full"
+					} flex items-center justify-center gap-2`}
+				>
+					{children}
+				</span>
 			</Component>
 		);
 	}

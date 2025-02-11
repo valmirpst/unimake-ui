@@ -1,5 +1,5 @@
 import { cn } from "@/lib/cn";
-import React, { forwardRef } from "react";
+import { ComponentPropsWithoutRef, ElementType, forwardRef } from "react";
 
 const sizeStyles = {
 	xs: "text-lg",
@@ -19,27 +19,30 @@ const weightStyles = {
 	bold: "font-bold"
 };
 
-export interface HeadingProps extends React.HTMLAttributes<HTMLDivElement> {
-	as?: React.ElementType;
+type HeadingProps<T extends ElementType = "h2"> = {
+	as?: T;
 	size?: keyof typeof sizeStyles;
 	weight?: keyof typeof weightStyles;
-}
+} & ComponentPropsWithoutRef<T>;
 
-export const Heading = forwardRef<HTMLParagraphElement, HeadingProps>(
-	({ as: Component = "p", size = "md", weight = "medium", children, className, ...rest }, ref) => {
-		const classes = cn(
-			"font-default text-gray-900 leading-full m-0",
-			sizeStyles[size],
-			weightStyles[weight],
-			className
-		);
+export const HeadingComponent = <T extends ElementType = "h2">(
+	{ as, size = "md", weight = "medium", children, className, ...rest }: HeadingProps<T>,
+	ref: React.Ref<Element>
+) => {
+	const classes = cn("font-default text-gray-900 leading-full m-0", sizeStyles[size], weightStyles[weight], className);
+	const Component = as || "h2";
 
-		return (
-			<Component ref={ref} className={classes} {...rest}>
-				{children}
-			</Component>
-		);
-	}
-);
+	return (
+		// eslint-disable-next-line
+		<Component ref={ref as React.Ref<any>} className={classes} {...rest}>
+			{children}
+		</Component>
+	);
+};
+
+export const Heading = forwardRef(HeadingComponent) as unknown as {
+	<T extends ElementType = "h2">(props: HeadingProps<T> & { ref?: React.Ref<Element> }): React.JSX.Element;
+	displayName: string;
+};
 
 Heading.displayName = "Heading";
